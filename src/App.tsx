@@ -25,15 +25,15 @@ export default function App() {
   const [previousTab, setPreviousTab] = useState<string>('home');
   const [records] = useState<HistoricalRecord[]>(HISTORICAL_RECORDS);
   const [selectedRecord, setSelectedRecord] = useState<HistoricalRecord>(HISTORICAL_RECORDS[0]);
-  const [compareList, setCompareList] = useState<string[]>(['zdf-hanse', 'stortebeker']);
+  const [compareList, setCompareList] = useState<string[]>(['wolf-hall', 'other-boleyn-girl']);
   const [bookmarks, setBookmarks] = useState<string[]>([
-    'zdf-hanse',
+    'wolf-hall',
     'name-of-the-rose',
     'the-king-henry-v',
-    'wolf-hall'
+    'gladiator'
   ]);
   const [projects, setProjects] = useState<ProjectBoard[]>(INITIAL_PROJECT_BOARDS);
-  const [searchQuery, setSearchQuery] = useState<string>('13세기 북독일 한자동맹 상인 계급 여성 복식');
+  const [searchQuery, setSearchQuery] = useState<string>('16세기 튜더 왕가 게이블 후드 코르셋');
 
   const handleNavigate = (tab: string) => {
     setPreviousTab(currentTab);

@@ -90,25 +90,32 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           <div className="flex items-center gap-1.5 pt-1 overflow-x-auto no-scrollbar">
             <span className="font-['Newsreader'] text-[11px] text-[#78716C] shrink-0 font-medium">추천 질의:</span>
             <button
-              onClick={() => handleQuickTag('14C 누비 갬비슨 구조')}
+              onClick={() => handleQuickTag('16세기 튜더 왕가 게이블 후드 코르셋')}
               className="text-xs px-2.5 py-1 rounded-md bg-[#F4EFE6] border border-[#E7E0D3] text-[#57534E] font-['Newsreader'] shrink-0 hover:border-[#8C6212] hover:text-[#8C6212] transition-colors cursor-pointer"
               type="button"
             >
-              #14C 누비 갬비슨 구조
+              #16C 튜더 게이블 후드
             </button>
             <button
-              onClick={() => handleQuickTag('튜더 궁정 게이블 후드')}
+              onClick={() => handleQuickTag('14세기 기사 갑옷과 누비 갬비슨')}
               className="text-xs px-2.5 py-1 rounded-md bg-[#F4EFE6] border border-[#E7E0D3] text-[#57534E] font-['Newsreader'] shrink-0 hover:border-[#8C6212] hover:text-[#8C6212] transition-colors cursor-pointer"
               type="button"
             >
-              #튜더 궁정 게이블 후드
+              #14C 기사 갑옷 갬비슨
             </button>
             <button
-              onClick={() => handleQuickTag('플랑드르 상인 우플랑드')}
+              onClick={() => handleQuickTag('18세기 로코코 파니에 드레스')}
               className="text-xs px-2.5 py-1 rounded-md bg-[#F4EFE6] border border-[#E7E0D3] text-[#57534E] font-['Newsreader'] shrink-0 hover:border-[#8C6212] hover:text-[#8C6212] transition-colors cursor-pointer"
               type="button"
             >
-              #플랑드르 상인 우플랑드
+              #18C 로코코 파니에 드레스
+            </button>
+            <button
+              onClick={() => handleQuickTag('로마 군단 흉갑과 토가')}
+              className="text-xs px-2.5 py-1 rounded-md bg-[#F4EFE6] border border-[#E7E0D3] text-[#57534E] font-['Newsreader'] shrink-0 hover:border-[#8C6212] hover:text-[#8C6212] transition-colors cursor-pointer"
+              type="button"
+            >
+              #로마 군단 흉갑과 토가
             </button>
           </div>
         </div>
