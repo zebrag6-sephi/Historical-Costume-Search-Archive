@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HistoricalRecord } from '../types';
 import { AiFilterModal, AiParsedCriteria } from './modals/AiFilterModal';
+import { parseNaturalLanguageQuery, searchHistoricalRecords, SearchResult } from '../utils/nlpSearch';
 
 interface ExploreScreenProps {
   records: HistoricalRecord[];
@@ -28,40 +29,41 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
   const [filterAccuracy, setFilterAccuracy] = useState('all');
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
 
-  const [aiCriteria, setAiCriteria] = useState<AiParsedCriteria>({
-    era: '13세기 (중세 성기)',
-    region: '북유럽 / 북독일',
-    status: '상인·시민 계급',
-    gender: '여성 (Frau)',
-    garments: '윔플(베일), 코트하르디, 모피 트리밍'
-  });
+  // AI Structured criteria parsed dynamically from the query
+  const [aiCriteria, setAiCriteria] = useState<AiParsedCriteria>(() => 
+    parseNaturalLanguageQuery(initialQuery)
+  );
+
+  // Sync initial query when user enters from Home or another tab
+  useEffect(() => {
+    if (initialQuery !== undefined) {
+      setSearchQuery(initialQuery);
+    }
+  }, [initialQuery]);
+
+  // Dynamically update the AI criteria whenever the user changes the query
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      const parsed = parseNaturalLanguageQuery(searchQuery);
+      setAiCriteria(parsed);
+    }
+  }, [searchQuery]);
 
   const handleClear = () => {
     setSearchQuery('');
   };
 
-  // Filter records based on search and filters
-  const filteredRecords = records.filter(record => {
-    if (filterAccuracy !== 'all' && record.accuracyGrade !== filterAccuracy) {
-      return false;
-    }
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
-      const matchText = (
-        record.title + ' ' +
-        record.originalTitle + ' ' +
-        record.region + ' ' +
-        record.era + ' ' +
-        record.tags.join(' ')
-      ).toLowerCase();
-      
-      // If user typed a search, check basic matching or return authentic items
-      if (!matchText.includes(q) && !q.includes('13세기') && !q.includes('한자')) {
-        return true; // keep high visibility for historical exploration
-      }
-    }
-    return true;
-  });
+  const handlePresetQuery = (query: string) => {
+    setSearchQuery(query);
+  };
+
+  // Perform intelligent semantic search
+  const searchResults: SearchResult[] = searchHistoricalRecords(
+    records,
+    searchQuery,
+    filterAccuracy,
+    filterEra
+  );
 
   return (
     <div className="flex flex-col w-full pb-28">
@@ -87,7 +89,7 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="자연어로 시대, 계층, 복식 요소를 검색해보세요"
+            placeholder="자연어로 시대, 계층, 복식 요소를 검색해보세요 (예: 14세기 기사 갑옷과 갬비슨)"
             className="w-full bg-transparent text-[#1C1917] font-medium text-sm outline-none placeholder:text-[#A8A29E] truncate font-body"
           />
           {searchQuery && (
@@ -101,14 +103,47 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
             </button>
           )}
         </div>
+
+        {/* Quick Suggestion Pills */}
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+          <span className="font-['Newsreader'] text-[11px] text-[#78716C] shrink-0 font-medium">인기 사료 질의:</span>
+          <button
+            onClick={() => handlePresetQuery('14세기 기사 갑옷과 누비 갬비슨')}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
+            type="button"
+          >
+            #14C 기사 갑옷과 갬비슨
+          </button>
+          <button
+            onClick={() => handlePresetQuery('수도사 복식 카울 후드')}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
+            type="button"
+          >
+            #수도사 카울 후드
+          </button>
+          <button
+            onClick={() => handlePresetQuery('16세기 튜더 왕가 게이블 후드 코르셋')}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
+            type="button"
+          >
+            #튜더 게이블 후드
+          </button>
+          <button
+            onClick={() => handlePresetQuery('17세기 네덜란드 서민 린넨')}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
+            type="button"
+          >
+            #17C 네덜란드 린넨
+          </button>
+        </div>
       </section>
 
-      {/* AI Dissection Block */}
-      <section className="mx-4 mt-3 p-3.5 bg-[#F5EFE6] border border-[#E4DACB] rounded-2xl flex flex-col gap-2.5 shadow-xs max-w-xl self-center w-[calc(100%-2rem)]">
+      {/* AI Dissection Block - Dynamically Parsed */}
+      <section className="mx-4 mt-2 p-3.5 bg-[#F5EFE6] border border-[#E4DACB] rounded-2xl flex flex-col gap-2.5 shadow-xs max-w-xl self-center w-[calc(100%-2rem)]">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5 text-[#292524]">
             <span className="material-symbols-outlined text-[19px] text-[#8C6212]">schema</span>
-            <h2 className="text-xs font-bold text-[#1C1917] tracking-tight">AI 구조화 파싱 조건</h2>
+            <h2 className="text-xs font-bold text-[#1C1917] tracking-tight">AI 자연어 구조화 파싱 결과</h2>
           </div>
           <button
             onClick={() => setIsFilterModalOpen(true)}
@@ -116,7 +151,7 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
             type="button"
           >
             <span className="material-symbols-outlined text-[15px]">tune</span>
-            <span className="text-xs font-['Newsreader']">조건 수정</span>
+            <span className="text-xs font-['Newsreader']">조건 수동 수정</span>
           </button>
         </div>
 
@@ -153,32 +188,16 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
       <section className="mt-3 flex flex-col gap-2 max-w-xl mx-auto w-full">
         <div className="flex items-center gap-2 px-4 overflow-x-auto no-scrollbar py-0.5">
           <button
-            onClick={() => setFilterEra(filterEra === '13C' ? 'all' : '13C')}
+            onClick={() => setFilterEra(filterEra === 'all' ? '중세' : filterEra === '중세' ? '르네상스' : 'all')}
             className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full border text-xs font-semibold whitespace-nowrap shadow-2xs transition-colors cursor-pointer ${
-              filterEra === '13C'
+              filterEra !== 'all'
                 ? 'bg-[#78350F] text-amber-50 border-[#78350F]'
                 : 'bg-white border-[#D9CDBF] text-[#292524] active:bg-[#ECE4D8]'
             }`}
             type="button"
           >
-            <span>시대: 13C 중세</span>
+            <span>시대: {filterEra === 'all' ? '전체 시대' : filterEra}</span>
             <span className="material-symbols-outlined text-[16px]">arrow_drop_down</span>
-          </button>
-
-          <button
-            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#D9CDBF] text-[#292524] text-xs font-semibold whitespace-nowrap active:bg-[#ECE4D8] shadow-2xs cursor-pointer"
-            type="button"
-          >
-            <span>문화권: 게르만·한자</span>
-            <span className="material-symbols-outlined text-[16px] text-[#78716C]">arrow_drop_down</span>
-          </button>
-
-          <button
-            className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white border border-[#D9CDBF] text-[#292524] text-xs font-semibold whitespace-nowrap active:bg-[#ECE4D8] shadow-2xs cursor-pointer"
-            type="button"
-          >
-            <span>계층: 길드 상인</span>
-            <span className="material-symbols-outlined text-[16px] text-[#78716C]">arrow_drop_down</span>
           </button>
 
           <button
@@ -190,13 +209,26 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
             className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap shadow-xs transition-colors cursor-pointer ${
               filterAccuracy !== 'all'
                 ? 'bg-[#8C6212] text-white border border-[#8C6212]'
-                : 'bg-[#78350F] text-amber-50'
+                : 'bg-white border-[#D9CDBF] text-[#292524]'
             }`}
             type="button"
           >
-            <span>고증: {filterAccuracy === 'all' ? '전체' : filterAccuracy}</span>
-            <span className="material-symbols-outlined text-[16px] text-amber-200">arrow_drop_down</span>
+            <span>고증: {filterAccuracy === 'all' ? '전체 등급' : filterAccuracy === 'AUTHENTIC' ? '추천만' : '부분참고'}</span>
+            <span className="material-symbols-outlined text-[16px]">arrow_drop_down</span>
           </button>
+
+          {(filterEra !== 'all' || filterAccuracy !== 'all') && (
+            <button
+              onClick={() => {
+                setFilterEra('all');
+                setFilterAccuracy('all');
+              }}
+              className="text-xs text-[#8C6212] font-semibold underline px-1 cursor-pointer"
+              type="button"
+            >
+              필터 초기화
+            </button>
+          )}
         </div>
 
         {/* Accuracy Grade Quick Legend */}
@@ -206,13 +238,10 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
           </span>
           <div className="flex items-center gap-1.5">
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] text-[10px] font-bold">
-              <span className="material-symbols-outlined text-[13px] filled">verified</span> 추천
+              <span className="material-symbols-outlined text-[13px] filled">verified</span> 추천 (AUTHENTIC)
             </span>
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-[10px] font-bold">
-              <span className="material-symbols-outlined text-[13px]">change_circle</span> 부분 참고
-            </span>
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#FEF2F2] border border-[#FECACA] text-[#991B1B] text-[10px] font-bold">
-              <span className="material-symbols-outlined text-[13px]">warning</span> 주의 필요
+              <span className="material-symbols-outlined text-[13px]">change_circle</span> 부분 참고 (SELECTIVE)
             </span>
           </div>
         </div>
@@ -223,17 +252,35 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
         <div className="flex items-baseline gap-2">
           <h3 className="font-serif text-[17px] font-bold text-[#1C1917]">일치하는 고증 레퍼런스</h3>
           <span className="text-[11px] font-bold text-[#8C6212] bg-[#F7EFE4] px-2 py-0.5 rounded-full border border-[#DFD1BD]">
-            {filteredRecords.length}건
+            {searchResults.length}건
           </span>
         </div>
         <span className="text-[11px] font-semibold text-[#78716C] flex items-center gap-0.5">
-          사료 교차검증순 <span className="text-[9px]">▼</span>
+          AI 관련도 및 사료 교차검증순 <span className="text-[9px]">▼</span>
         </span>
       </div>
 
+      {/* Empty State */}
+      {searchResults.length === 0 && (
+        <div className="mx-4 mt-6 p-8 text-center bg-white rounded-2xl border border-[#D6CBB9] max-w-xl self-center w-[calc(100%-2rem)]">
+          <span className="material-symbols-outlined text-[36px] text-[#8C6212] mb-2">search_off</span>
+          <h4 className="font-serif text-base font-bold text-[#1C1917]">일치하는 복식 사료가 없습니다</h4>
+          <p className="font-body text-xs text-[#78716C] mt-1">
+            ‘{searchQuery}’에 해당하는 고증 데이터를 찾지 못했습니다. 시대(중세, 르네상스)나 복식 명칭(베일, 갑옷, 튜닉)으로 다시 검색해보세요.
+          </p>
+          <button
+            onClick={() => setSearchQuery('')}
+            className="mt-3 px-3 py-1.5 bg-[#8C6212] text-white text-xs font-semibold rounded-lg cursor-pointer"
+            type="button"
+          >
+            전체 사료 목록 보기
+          </button>
+        </div>
+      )}
+
       {/* Cards List */}
       <div className="px-4 mt-2 flex flex-col gap-3.5 max-w-xl mx-auto w-full">
-        {filteredRecords.map((record) => {
+        {searchResults.map(({ record, matchReasons }) => {
           const isComparing = compareList.includes(record.id);
           const isBookmarked = bookmarks.includes(record.id);
           const compareIdx = compareList.indexOf(record.id) + 1;
@@ -295,6 +342,18 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
 
               {/* Dossier Metadata */}
               <div className="p-3.5 flex flex-col gap-2.5">
+                {/* Match Reasons Badges */}
+                {matchReasons.length > 0 && searchQuery.trim() && (
+                  <div className="flex items-center gap-1 flex-wrap">
+                    <span className="text-[10px] text-[#8C6212] font-['Newsreader'] font-bold">검색 매칭:</span>
+                    {matchReasons.slice(0, 3).map((r, i) => (
+                      <span key={i} className="text-[10px] bg-[#FAF0E2] text-[#8C6212] px-2 py-0.5 rounded font-sans border border-[#DEBE96]">
+                        ✓ {r}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
                 {/* Archival Verification Note */}
                 <div className="p-3 rounded-xl bg-[#F7F2EB] border border-[#E9E0D3] flex flex-col gap-1">
                   <div className="flex items-center justify-between">

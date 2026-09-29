@@ -18,10 +18,10 @@ export const CompareScreen: React.FC<CompareScreenProps> = ({
   onSaveToLibrary
 }) => {
   const [workAId, setWorkAId] = useState<string>(
-    compareList[0] || report.workAId || 'hanse-women'
+    compareList[0] || report.workAId || 'zdf-hanse'
   );
   const [workBId, setWorkBId] = useState<string>(
-    compareList[1] || report.workBId || 'north-sea-merchants'
+    compareList[1] || report.workBId || 'stortebeker'
   );
   const [isSaved, setIsSaved] = useState(false);
   const [isExportOpen, setIsExportOpen] = useState(false);
