@@ -33,7 +33,7 @@ export default function App() {
     'gladiator'
   ]);
   const [projects, setProjects] = useState<ProjectBoard[]>(INITIAL_PROJECT_BOARDS);
-  const [searchQuery, setSearchQuery] = useState<string>('16세기 튜더 왕가 게이블 후드 코르셋');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const handleNavigate = (tab: string) => {
     setPreviousTab(currentTab);
@@ -136,7 +136,7 @@ export default function App() {
             report={COMPARISON_REPORT_DATA}
             compareList={compareList}
             onSelectRecord={handleSelectRecord}
-            onSaveToLibrary={() => handleToggleBookmark(compareList[0] || 'hanse-women')}
+            onSaveToLibrary={() => handleToggleBookmark(compareList[0] || 'wolf-hall')}
           />
         )}
 

@@ -28,6 +28,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#fdfbf7', name: '천연 린넨 화이트' }
     ],
     tags: ['#튜더', '#게이블 후드', '#코르셋', '#영국궁정', '#16C르네상스', '#여성복식'],
+    aliases: ['울프 홀', '울프홀', 'wolf hall', '게이블 후드', '튜더 왕조', '헨리 8세', '토머스 크롬웰', '마크 라일런스'],
     shortVerdict: '기하학적 건축미를 띤 게이블 후드와 튜더 왕가 코르셋 가운 사료 완벽 복원.',
     parts: [
       {
@@ -39,9 +40,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
         description: '기하학적 5각형 박공 프레임에 진주 자수 밴드와 검은 벨벳 베일을 결합한 튜더 왕비/궁녀의 상징. 이마를 드러내지 않고 머리카락을 완전히 머리망(Caul)에 수납.',
         material: '실크 벨벳 + 진주 + 리넨',
         technique: '골격 프레임 결속',
-        matchRate: 98,
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUHq0C_w-lsq19w66H8KlhhIUpei6a0g7aScqQO2L9bqcmtIF22u6DwqJpedHvkBhB05IL9xoMHgdBHyiluw9gucs5bfATxJ371lx4e6SngrXVXpFOvCO0726K50lyWCDToa6NmazboJwJhNugkFmcRDrftwDJLSZvLH_9gebLbHDpIb4UPYYopxWzDxBMNu0vsmNpxOWsZc6ds3quw2qunvIJqgVOQJAuNRl7rxhLmzPJV_KQhNWggw',
-        imageAlt: '16th century English Gable Hood detail'
+        matchRate: 98
       },
       {
         id: 'wh2',
@@ -52,9 +51,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
         description: '가슴을 평평하게 압박하고 어깨선을 강조하는 각진 네크라인. 촘촘한 다마스크 문양과 묵직한 안감.',
         material: '실크 다마스크 + 양모 펠트 안감',
         technique: '고래수염 본 삽입 손바느질',
-        matchRate: 97,
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA9CvnIzX7X7OyZM3J9EbGVMw6tWM1BGbg_e1AHgK9ul9RvlZ_6yJVYrlh-GAylVWlHTFvq2ct5LQyxmNOj9bzMHlkB_YazDUkADW8knkaVdax7UYDq6dKCsnQRUmgKPzTHysWaYo0X-y5Hht42-nNxFzvgC8ANkS7dTGjcxziYEP38XtWsiWvmB0_5SgeDhKX0M4b5vsdYsMO5BgC4xs0OFthwatAnAMT6jQU9E3zRf0FCYhUFYPYG1g',
-        imageAlt: 'Tudor bodice archival restoration'
+        matchRate: 97
       }
     ]
   },
@@ -87,6 +84,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#d4cbb9', name: '골드 자수 트리밍' }
     ],
     tags: ['#천일의스캔들', '#프렌치후드', '#앤불린', '#네크라인각색', '#16C르네상스'],
+    aliases: ['천일의 스캔들', '천일의스캔들', 'the other boleyn girl', '앤 불린', '프렌치 후드', '나탈리 포트만'],
     shortVerdict: '극적 시각화를 위한 비비드 실크와 현대적 네크라인 각색이 혼재된 대표작.',
     parts: [
       {
@@ -130,6 +128,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#48382c', name: '아쟁쿠르 진흙 브라운' }
     ],
     tags: ['#기사', '#갑옷', '#아쟁쿠르 갑주', '#갬비슨', '#샤프롱', '#우플랑드', '#15C르네상스', '#영국'],
+    aliases: ['더 킹: 헨리 5세', '더 킹', '더킹', '헨리 5세', 'the king', '아쟁쿠르', '티모시 샬라메', '백년전쟁'],
     shortVerdict: '아쟁쿠르 전투 무구 및 초기 란셋형 후드 실물 복원.',
     parts: [
       {
@@ -184,6 +183,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#d9cdb8', name: '삼베 로프 내추럴' }
     ],
     tags: ['#수도사', '#조직 거친 양모', '#카울 후드(Cowl)', '#삼베 매듭 띠', '#수도사 가죽 샌들', '#14C중세'],
+    aliases: ['장미의 이름', '장미의이름', 'the name of the rose', '수도사', '수도원', '카울 후드', '카울', '해빗', '숀 코너리'],
     shortVerdict: '거친 양모 해빗과 카울 후드, 교단별 규율 복식의 계층적 차이 고증 완성.',
     parts: [
       {
@@ -224,7 +224,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
     guild: '십자군 기사단(구호기사단, 성전기사단) 및 현지 상인',
     socialStatus: '성채 영주 및 십자군 기사 계층',
     category: '12C 중세 사슬갑옷(Hauberk) 및 튜닉/슈르코',
-    accuracyScore: 93,
+    accuracyScore: 95,
     accuracyGrade: 'AUTHENTIC',
     coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5IiwIlmgkF6ipNRIkB9ETryllIOlN2forbWI4gvKaBfbr_FeI2pgpSU0Ty6-aCm6sHYGP63EUbNs2EJvTcQyz-2bwlpCX_KLODXRmiH7b1QqV9qtJ-nSbKxf6vDEt8sbZb49v6dDI9QLM72WFlyNqaUlViKlSjmDDOqIAOOZRp2nJ6iTtiusdwU36iFN-jeGO4JGAcyROPNg9Io4M1F6qpo5o5FuCrP__5u08xdDwQyBrQlmf7TGEWw',
     alt: '12th century Crusader knight putting on a quilted linen gambeson arming doublet underneath heavy chainmail hauberk.',
@@ -237,9 +237,22 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#d6cbb9', name: '사막 모래 린넨' },
       { hex: '#7f1d1d', name: '성전 기사단 크로스 레드' }
     ],
-    tags: ['#십자군', '#기사', '#사슬갑옷', '#갬비슨', '#슈르코', '#12C중세'],
+    tags: ['#십자군', '#기사', '#사슬갑옷', '#체인메일', '#갬비슨', '#슈르코', '#12C중세'],
+    aliases: ['킹덤 오브 헤븐', '킹덤오브헤븐', 'kingdom of heaven', '십자군', '예루살렘', '발리앙', '사슬갑옷', '체인메일', '리들리 스콧', '12세기'],
     shortVerdict: '체인메일 사슬갑옷과 누비 갬비슨 언더레이어의 실전적 고증 완성.',
-    parts: []
+    parts: [
+      {
+        id: 'koh1',
+        number: 1,
+        partName: '방호 갑주',
+        title: '리벳 결속 쇠사슬 갑옷 (Hauberk)',
+        subtitle: '수천 개의 단철 고리를 엮은 체인메일',
+        description: '12세기 십자군 기사들이 전신에 착용한 방호구. 머리를 보호하는 코이프(Coif)와 일체형.',
+        material: '단철 고리 결속',
+        technique: '수공예 리벳 체인 직조',
+        matchRate: 98
+      }
+    ]
   },
 
   // 6. 라스트 듀얼: 최후의 결투 (The Last Duel, 2021)
@@ -269,6 +282,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#f5f5f4', name: '섬세한 린넨 윔플' }
     ],
     tags: ['#라스트듀얼', '#백년전쟁', '#프랑스기사', '#바시넷투구', '#윔플', '#14C중세'],
+    aliases: ['라스트 듀얼: 최후의 결투', '라스트 듀얼', '라스트듀얼', 'the last duel', '바시넷', '바시넷 투구', '윔플', '백년전쟁', '14세기'],
     shortVerdict: '1386년 프랑스 바시넷 투구와 사슬 아벤타일, 귀부인 윔플 실물 고증.',
     parts: []
   },
@@ -299,7 +313,8 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#3f4238', name: '하이랜드 모스 그린' },
       { hex: '#78350f', name: '가죽 버클 새들' }
     ],
-    tags: ['#기사', '#갬비슨', '#철모', '#스코틀랜드', '#14C중세'],
+    tags: ['#기사', '#갬비슨', '#철모', '#케틀햇', '#스코틀랜드', '#14C중세'],
+    aliases: ['아웃로 킹', '아웃로킹', 'outlaw king', '스코틀랜드', '케틀햇', '철모', '로버트 브루스', '14세기'],
     shortVerdict: '14세기 초 케틀 햇 철모와 누비 갬비슨 결속 방식 사료 부합.',
     parts: []
   },
@@ -331,6 +346,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#e7e5e4', name: '미표백 린넨 에크루' }
     ],
     tags: ['#네덜란드', '#린넨', '#헤드랩', '#보디스', '#17C바로크', '#서민복식'],
+    aliases: ['진주 귀걸이를 한 소녀', '진주 귀걸이', '진주귀걸이', 'girl with a pearl earring', '베르메르', '델프트', '17세기'],
     shortVerdict: '17세기 네덜란드 델프트 시민 및 하녀 복식 회화 사료 완벽 일치.',
     parts: []
   },
@@ -362,6 +378,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#fef3c7', name: '샴페인 골드 자수' }
     ],
     tags: ['#로코코', '#마리앙투아네트', '#파니에', '#코르셋', '#베르사유', '#18C로코코'],
+    aliases: ['마리 앙투아네트', '마리앙투아네트', 'marie antoinette', '로코코', '파니에', '베르사유', '18세기'],
     shortVerdict: '파니에와 와토 주름을 살린 로브 아 라 프랑세즈 아카데미 수상작.',
     parts: []
   },
@@ -393,6 +410,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#fef08a', name: '실크 브로케이드 골드' }
     ],
     tags: ['#배리린든', '#18C유럽', '#조지왕조', '#프록코트', '#군복', '#스탠리큐브릭'],
+    aliases: ['배리 린든', '베리 린든', '배리린든', '베리린든', 'barry lyndon', '조지왕조', '프록코트', '18세기'],
     shortVerdict: '실제 18세기 유물 실측 복원 및 촛불 촬영 복식사 최고 마스터피스.',
     parts: []
   },
@@ -424,6 +442,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#365314', name: '하트퍼드셔 모스 올리브' }
     ],
     tags: ['#오만과편견', '#리젠시', '#엠파이어드레스', '#스펜서재킷', '#19C빅토리아', '#영국'],
+    aliases: ['오만과 편견', '오만과편견', 'pride and prejudice', '엠파이어 드레스', '스펜서', '리젠시', '19세기'],
     shortVerdict: '섭정기 엠파이어 실루엣과 면 머슬린 드레스 사료 완벽 구현.',
     parts: []
   },
@@ -455,6 +474,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#f5f5f4', name: '천연 양모 튜니카' }
     ],
     tags: ['#로마제국', '#글래디에이터', '#갑주', '#토가', '#튜니카', '#고대'],
+    aliases: ['글래디에이터', 'gladiator', '로마', '검투사', '막시무스', '토가', '흉갑', '고대'],
     shortVerdict: '로마 군단 흉갑과 원로원 토가 드레이프 아카데미 의상상 수상작.',
     parts: []
   },
@@ -486,6 +506,7 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#d97706', name: '앤틱 머스타드 벨벳' }
     ],
     tags: ['#작은아씨들', '#19C빅토리아', '#크리놀린', '#남북전쟁', '#린넨셔츠'],
+    aliases: ['작은 아씨들', '작은아씨들', 'little women', '남북전쟁', '크리놀린', '조 마치', '19세기'],
     shortVerdict: '남북전쟁기 면화 드레스와 남성풍 조끼 믹스매치 아카데미 수상작.',
     parts: []
   },
@@ -517,7 +538,328 @@ export const HISTORICAL_RECORDS: HistoricalRecord[] = [
       { hex: '#fef08a', name: '오조룡보 금사 자수' }
     ],
     tags: ['#상의원', '#조선왕실', '#적의', '#곤룡포', '#도포', '#한국사극', '#한복'],
+    aliases: ['상의원', 'the royal tailor', '조선', '한복', '적의', '곤룡포', '도포', '18세기'],
     shortVerdict: '조선 왕실 의궤 기반 적의와 곤룡포 금사 자수 실물 고증.',
+    parts: []
+  },
+
+  // 15. 사도 (The Throne, 2015)
+  {
+    id: 'the-throne',
+    title: '사도',
+    originalTitle: 'The Throne (2015, 이준익 감독, 송강호·유아인 주연)',
+    mediaType: '조선 왕실 실화 정통 역사 영화 (심현섭 의상감독)',
+    year: 2015,
+    era: '18세기 조선 (1762년 영조·사도세자)',
+    eraCategory: '근대·빅토리아',
+    region: '한양 창경궁 문정전',
+    guild: '조선 왕실 및 도제조 침선',
+    socialStatus: '국왕 영조, 사도세자, 혜경궁 홍씨',
+    category: '조선 군복 융복(戎服)·철릭 및 삼년상 상복(喪服)',
+    accuracyScore: 96,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA8TCPixq0DBAj4c2yBweidsYXeixUv2c3BLCJm7W7RGLfjHv84znZpx4K0yDSjGRK4pDzoTpSlmE4NYKQ0RsGvNbS4UcgcpnWPPeg-M-p_1hEZwxtZEfHooUzPdcUZWHqo2jOKoyqlc8DuGCWEdRstasZdTRGVnEOjw2Dh7dj5cMK94IIOYabDVD3J-QjSj-6MxC5O_9skWhB4TiBTi1HTOgroemUECiw0UYyHYubY17jWAnw-4GCM7A',
+    alt: 'Joseon crown prince in traditional indigo silk Cheollik and King Yeongjo in crimson royal robe.',
+    organization: '한국학중앙연구원 장서각 및 국립민속박물관',
+    judgmentSummary: '영조의 검소한 모시 곤룡포와 사도세자의 군복 융복(철릭, 전립), 혜경궁 홍씨의 옥색 당의와 참최 삼년상 상복까지 조선 후기 전례 복식의 정수를 엄격하게 재현.',
+    sources: ['영조실록(英祖實錄)', '한중록(恨中錄)', '국조상례보편(國朝喪禮補編)'],
+    creatorTips: '조선 후기 무관과 왕세자가 착용한 철릭의 주름 잡힌 하의 실루엣과 붉은 융복 끈의 역동적인 연출이 특징입니다.',
+    palette: [
+      { hex: '#1c1917', name: '영조 흑립 먹색' },
+      { hex: '#831843', name: '왕실 자색 명주' },
+      { hex: '#f5f5f4', name: '모시 상복 백색' }
+    ],
+    tags: ['#사도', '#조선왕실', '#융복', '#철릭', '#상복', '#한국사극', '#한복'],
+    aliases: ['사도', 'the throne', '사도세자', '영조', '송강호', '유아인', '조선', '한복', '융복', '철릭', '18세기'],
+    shortVerdict: '영조와 사도세자의 군복 융복과 전례 상복 완벽 사료 실증.',
+    parts: []
+  },
+
+  // 16. 남한산성 (The Fortress, 2017)
+  {
+    id: 'the-fortress',
+    title: '남한산성',
+    originalTitle: 'The Fortress (2017, 황동혁 감독, 이병헌·김윤석·박해일 주연)',
+    mediaType: '병자호란 사실주의 전쟁 영화 (조상경 의상감독)',
+    year: 2017,
+    era: '17세기 조선 (1636년 병자호란)',
+    eraCategory: '바로크·로코코',
+    region: '남한산성 행궁 및 삼전도',
+    guild: '조선 훈련도감 군관 및 청나라 팔기군',
+    socialStatus: '인조, 예조판서 김상헌, 이조판서 최명길, 조선 군졸',
+    category: '조선 중기 두정갑(頭釘甲)·철갑 및 방한용 이엄(耳掩)',
+    accuracyScore: 97,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrZ6hnCkeiBkv8tauMhXkh1_EJGwJS3c2sLXM87TUV0dpyhziFeucpcttQAsT8f_LT0_E6VtYrJmWKsAeMkotnW4C3sOssSrFNQ40TjF3fxCFgn_nP-XMJebF-r1EMyDUFY-PWK-MukiVoJwmJdsCtcHYFB3tcnrC_30OcejNr5rD1fgpr8hbja8Unp2j2zQWllN0LiSUPCoD1nfbmEa3Ugzgx4zuGqeaa0vZIsw8AGpxOgT4B2quNOw',
+    alt: 'Joseon soldier in heavy winter quilted armor with brass rivets and fur ear flap hat standing in frozen snow.',
+    organization: '육군박물관 및 전쟁기념관 전통무구 연구소',
+    judgmentSummary: '혹한의 산성 방어를 위해 가죽 안쪽에 쇠판을 덧대고 겉에 놋쇠 못을 박은 두정갑(頭釘甲), 털을 덧댄 방한모 이엄(耳掩), 서릿발 어린 무명 방한복을 한국 전쟁 영화 사상 가장 사실적으로 복원.',
+    sources: ['승정원일기 병자년 기록', '육군박물관 소장 조선 중기 두정갑 유물'],
+    creatorTips: '화려한 장식 대신 살을 에는 칼바람에 닳아 해진 솜 누빔 무명포와 청동 두정못의 차가운 금속성을 살릴 때 극도의 긴장감이 연출됩니다.',
+    palette: [
+      { hex: '#374151', name: '두정갑 무쇠 철색' },
+      { hex: '#78350f', name: '이엄 방한 수달피' },
+      { hex: '#e5e7eb', name: '혹한 설원 잿빛' }
+    ],
+    tags: ['#남한산성', '#두정갑', '#이엄', '#갑옷', '#병자호란', '#조선', '#한국사극'],
+    aliases: ['남한산성', 'the fortress', '병자호란', '인조', '이병헌', '김윤석', '두정갑', '철갑', '이엄', '17세기'],
+    shortVerdict: '조선 중기 실물 두정갑과 혹한 방한 이엄의 사실주의 무구 고증.',
+    parts: []
+  },
+
+  // 17. 엘리자베스 (Elizabeth, 1998)
+  {
+    id: 'elizabeth-1998',
+    title: '엘리자베스',
+    originalTitle: 'Elizabeth (1998, 세카르 카푸르 감독, 케이트 블란쳇 주연)',
+    mediaType: '아카데미 7개 부문 노미네이트 명작 (알렉산드라 번 의상감독)',
+    year: 1998,
+    era: '16세기 후기 (1558~1603년 엘리자베스 1세 조)',
+    eraCategory: '르네상스',
+    region: '잉글랜드 런던 화이트홀 궁정',
+    guild: '잉글랜드 왕실 패션 직조사 길드',
+    socialStatus: '여왕 엘리자베스 1세 및 궁정 귀족',
+    category: '16C 후기 러프 칼라(Ruff) & 파딩게일(Farthingale) 드레스',
+    accuracyScore: 94,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA3S2wwTAfEZdNJoJ8bHKnIgDkJ9qX2nkBrG6Ilyx2JJHtoU4UqUBHFITFuIR3GRz9Sj5fTXfO1PKfr4PJ2pyzy_3R1gMa-M4ceHILBQXH4oyePn6CWa2yEfZCFGGYSr9qJ5I7VDMsvH7TPgqiOAmi6x2IvY1DbR8DMBdCsaxbgHZJkFE17n-K3E24bRSBSS8kpT3aG6lynbtp1_AjfwMWcMETFctJEF2tSXy0csLUSuwfcOBCzUOAl-Q',
+    alt: 'Queen Elizabeth I in ornate white lace ruff collar and heavily embroidered golden silk gown.',
+    organization: '영국 국립초상화미술관(National Portrait Gallery)',
+    judgmentSummary: '목을 둘러싼 거대한 레이스 주름 러프 칼라(Ruff Collar)와 스페인식 원추형 파딩게일(Farthingale), 앤틱 진주 자수를 당대 엘리자베스 여왕 초상화 사료와 직조감까지 일치하게 재현.',
+    sources: ['엘리자베스 1세 펠리칸 초상화(Pelican Portrait)', '하트필드 하우스 보관 왕실 의상 목록'],
+    creatorTips: '전분(Starch)을 먹여 빳빳하게 주름잡은 러프 칼라가 얼굴을 감싸는 백색 프레임 역할을 하여 군주의 초월적 권위를 강조합니다.',
+    palette: [
+      { hex: '#fafaf9', name: '전분 먹인 순백 레이스' },
+      { hex: '#ca8a04', name: '엘리자베스 골드 브로케이드' },
+      { hex: '#450a0a', name: '임페리얼 버건디 벨벳' }
+    ],
+    tags: ['#엘리자베스', '#러프칼라', '#파딩게일', '#16C르네상스', '#튜더', '#영국궁정'],
+    aliases: ['엘리자베스', 'elizabeth', '케이트 블란쳇', '러프 칼라', '러프', '파딩게일', '16세기'],
+    shortVerdict: '여왕의 대관식 가운과 러프 칼라 초상화 원형 완벽 복원.',
+    parts: []
+  },
+
+  // 18. 위험한 관계 (Dangerous Liaisons, 1988)
+  {
+    id: 'dangerous-liaisons',
+    title: '위험한 관계',
+    originalTitle: 'Dangerous Liaisons (1988, 스티븐 프리어스 감독, 아카데미 의상상 수상)',
+    mediaType: '아카데미 의상상 수상작 (제임스 애치슨 의상감독)',
+    year: 1988,
+    era: '18세기 후기 (1780년대 프랑스 앙시앵 레짐)',
+    eraCategory: '바로크·로코코',
+    region: '프랑스 파리 귀족 살롱 및 교외 저택',
+    guild: '파리 패션 마르샹 드 모드(Marchandes de Modes)',
+    socialStatus: '메르퇴유 후작 부인, 발몽 자작, 투르벨 부인',
+    category: '18C 프랑스 로코코 코르셋 스테이즈 & 실크 드레스',
+    accuracyScore: 96,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAxRnAw4ENEEiM3XszZffFWc_nSuB7CNIM_qyTJaGU__YWXCiGWAsY-4cJNKbXoSJezA2QwPJpXhFFZ4S8Yw93-ssEBIn30XiJoytVBf7IZ5qiISBnJootg4Av-1Y_S_wRZzwmgGYrwXb6r7rIpsa_7ikpIF5LWyh020jj6GfOJzLzZaueXq4Bx6SdSKeZXqSwSi2b_o41yzyVHQLReijQbl3hDgvm1a0sH-TXUS0l2htyLV-j1UhE2dA',
+    alt: '18th century French aristocratic woman wearing finely laced silk stays and flowing rococo gown in private boudoir.',
+    organization: '파리 루브르 박물관 장식미술관',
+    judgmentSummary: '오프닝에서 메르퇴유 후작 부인이 스테이즈(Stays) 코르셋을 끈으로 조이고 로브를 갖춰 입는 착장 과정을 박물관 사료 그대로 재현하여 복식사학 최고의 명장면으로 손꼽힘.',
+    sources: ['드니 디드로 백과전서(Encyclopédie) 복식 도판', '18세기 파리 오트쿠튀르 아카이브'],
+    creatorTips: '단순한 드레스 겉모습만이 아니라, 페티코트 속치마, 포켓 파우치, 뼈대로 엮은 스테이즈 코르셋 등 18세기 여성 복식의 복합적인 내부 레이어를 시각화하기에 최적입니다.',
+    palette: [
+      { hex: '#fdf2f8', name: '살롱 실크 파우더 로즈' },
+      { hex: '#0f766e', name: '딥 틸 그린 타프타' },
+      { hex: '#fef08a', name: '골드 레이스 트리밍' }
+    ],
+    tags: ['#위험한관계', '#로코코', '#스테이즈', '#코르셋', '#파리살롱', '#18C로코코'],
+    aliases: ['위험한 관계', '위험한관계', 'dangerous liaisons', '스테이즈', '코르셋', '로코코', '18세기'],
+    shortVerdict: '18세기 프랑스 귀족의 스테이즈 코르셋 착장 과정 사료 실증.',
+    parts: []
+  },
+
+  // 19. 공작부인: 세기의 스캔들 (The Duchess, 2008)
+  {
+    id: 'the-duchess',
+    title: '공작부인: 세기의 스캔들',
+    originalTitle: 'The Duchess (2008, 사울 딥 감독, 키이라 나이틀리 주연)',
+    mediaType: '아카데미 의상상 수상 영화 (마이클 오코너 의상감독)',
+    year: 2008,
+    era: '18세기 후기 (1774~1790년 영국 조지 왕조)',
+    eraCategory: '바로크·로코코',
+    region: '영국 런던 데번셔 하우스 및 바스',
+    guild: '런던 왕실 여성 모자점 및 드레스 제작소',
+    socialStatus: '데번셔 공작부인 조지아나 카벤디시',
+    category: '18C 영국 조지 왕조 대형 깃털 모자 & 실크 가운',
+    accuracyScore: 95,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuABXuM-mvZcEnLQ2NlSYBKT27zVvbBwuenU8paHQLYQ9wRU5acRMfMT4HKPBkIk1t-_S0SGmWsrj2nCnrbsQnM2UFNyInYTokALZZqpscXNE6t5GzEDhtntuUWFAvPcclPDNuuCFJjN56S_JTqwyeoF93-9qEc5dcbRKDT1s04-xdVPX1N8n-SMJogUw5Df-kR4TSxIwaYu9flnE6ik5-Yrd7Ijj4VeH5ew0EJt2G4FxXr24V_vTtfHVQ',
+    alt: '18th century British duchess wearing monumental feathered wide brim hat and ruffled silk gown.',
+    organization: '영국 내셔널 트러스트(National Trust) 및 채츠워스 하우스',
+    judgmentSummary: '당대 최고의 패션 아이콘이었던 조지아나 공작부인의 3피트 높이 타조 깃털 장식 모자, 휘그당 정치 집회용 제복풍 드레스, 실크 가운을 유물과 완벽 일치하게 복원하여 오스카 의상상 수상.',
+    sources: ['채츠워스 하우스(Chatsworth House) 데번셔 가문 유물', '토머스 게인즈버러의 조지아나 초상화'],
+    creatorTips: '과장된 볼륨의 가발 헤어스타일 위에 얹힌 거대한 챙 모자와 군복에서 모티브를 가져온 남성풍 테일러드 칼라가 결합된 18세기 말 영국의 독특한 패션 양식입니다.',
+    palette: [
+      { hex: '#1e3a8a', name: '휘그당 폴리티컬 블루' },
+      { hex: '#fef3c7', name: '타조 깃털 크림 화이트' },
+      { hex: '#831843', name: '데번셔 벨벳 플럼' }
+    ],
+    tags: ['#공작부인', '#조지왕조', '#깃털모자', '#실크가운', '#18C유럽', '#영국귀족'],
+    aliases: ['공작부인: 세기의 스캔들', '공작부인', 'the duchess', '조지아나', '키이라 나이틀리', '조지왕조', '18세기'],
+    shortVerdict: '타조 깃털 모자와 휘그당 정치 제복 드레스 아카데미 수상작.',
+    parts: []
+  },
+
+  // 20. 엠마 (Emma., 2020)
+  {
+    id: 'emma-2020',
+    title: '엠마',
+    originalTitle: 'Emma. (2020, 오텀 드 와일드 감독, 안야 테일러 조이 주연)',
+    mediaType: '아카데미 의상상 노미네이트 명작 (알렉산드라 번 의상감독)',
+    year: 2020,
+    era: '19세기 초 (1815년 영국 섭정기)',
+    eraCategory: '근대·빅토리아',
+    region: '영국 하이버리 마을 및 돈웰 애비',
+    guild: '잉글랜드 시골 상류층 젠트리',
+    socialStatus: '엠마 우드하우스 및 나이틀리 가문',
+    category: '섭정기 파스텔 펠리스(Pelisse) 코트 & 본넷(Bonnet)',
+    accuracyScore: 96,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0zXYt9eX4THmIpoc3GAKLBhBLQXCj7TLk4Ago4-ZpOaVYg1IweA57vHXk0o3dABzRJQCYFusPALPiCyLpI5o85NepHnAdiI1OtXM-O0KXB0uu3PJnw_65YQitZ4KjGsATtp2UUYheHvdE34LPjAEH5-62iCRc0JhiZqTdOhI-HogI4_RAUX1jQIoWzDqTU1xuy3M7lWsIoyGgSro5QpIdzG76HckvPl9KuMlMM3x-8hjAmW6Q-rDARA',
+    alt: 'Regency lady in vibrant yellow wool pelisse coat and woven straw bonnet walking through English country garden.',
+    organization: '영국 찰스 디킨스 박물관 및 패션 인스티튜트',
+    judgmentSummary: '원작 소설의 시대상인 1815년 당시의 선명한 머스타드 옐로우 펠리스(Pelisse) 외투, 셔미제트(Chemisette) 목 레이스, 밀짚 본넷의 각도까지 당대 패션 플레이트와 완벽히 일치시킨 시각미의 극치.',
+    sources: ['당대 패션 저널 <라 벨 아셈블레(La Belle Assemblée)>', '빅토리아&앨버트 박물관 섭정기 컬렉션'],
+    creatorTips: '무채색 위주의 전형적인 사극 톤을 벗어나 19세기 초 실제 유행했던 밝은 파스텔톤과 비비드 옐로우 모직의 경쾌한 색채 조화를 참고하기에 최고의 작품입니다.',
+    palette: [
+      { hex: '#eab308', name: '엠마 머스타드 펠리스' },
+      { hex: '#fdf4ff', name: '셔미제트 화이트 무슬린' },
+      { hex: '#fed7aa', name: '밀짚 본넷 스트로' }
+    ],
+    tags: ['#엠마', '#리젠시', '#펠리스', '#본넷', '#19C빅토리아', '#영국'],
+    aliases: ['엠마', 'emma', '안야 테일러 조이', '펠리스', '셔미제트', '본넷', '리젠시', '19세기'],
+    shortVerdict: '1815년 섭정기 패션 플레이트의 선명한 색채와 펠리스 코트 복각.',
+    parts: []
+  },
+
+  // 21. 순수의 시대 (The Age of Innocence, 1993)
+  {
+    id: 'age-of-innocence',
+    title: '순수의 시대',
+    originalTitle: 'The Age of Innocence (1993, 마틴 스코세이지 감독, 아카데미 의상상 수상)',
+    mediaType: '아카데미 의상상 수상 영화 (가브리엘라 페스쿠치 의상감독)',
+    year: 1993,
+    era: '19세기 후기 (1870년대 뉴욕 도금시대)',
+    eraCategory: '근대·빅토리아',
+    region: '미국 뉴욕 맨해튼 상류 사회',
+    guild: '파리 샤를 프레데릭 워스(Worth) 오트쿠튀르 하우스',
+    socialStatus: '뉴욕 귀족 뉴랜드 아처, 올렌스카 백작부인',
+    category: '19C 후기 버슬(Bustle) 실루엣 이브닝 드레스',
+    accuracyScore: 97,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBKCRmyoWAPX2gI6ZvskbWMl5-DXawfvGBNkbwYqS7n4CxWpHFdHoRgj7PU8at6n-FcIIMtRrbumRYxsgOnBXkNF5wtR3RjrZA8JW8l2Bmn4vDCuEZUsg463yFdTm5gvkVriyHkvjmqvO82XaiDiQg-lxWitLCDWPLPNv5aXr0MhMEX2K1_fGsEng9dFtVELbcL_6nDAK0IsGxADcpM3h7BRid9yq0C_5zO-HbnFWcM_sBYr9p0M6fNeg',
+    alt: '1870s Gilded Age high society woman in crimson silk velvet evening dress with elaborate back bustle.',
+    organization: '뉴욕 메트로폴리탄 미술관(The Met) 코스튬 인스티튜트',
+    judgmentSummary: '엉덩이 뒤쪽을 수평으로 극단적으로 돌출시킨 버슬(Bustle) 구조와 파리 워스(House of Worth) 하우스의 실크 벨벳 이브닝 가운, 남성의 엄격한 화이트 타이 연미복을 박물관 유물 수준으로 복원.',
+    sources: ['샤를 프레데릭 워스 오트쿠튀르 실물 드레스', '1870년대 뉴욕 아카데미 오브 뮤직 오페라 사진집'],
+    creatorTips: '19세기 후반 도금시대의 핵심은 뒤쪽으로만 풍성하게 쏟아져 내리는 버슬 드레이프와 촘촘한 싸개 단추, 긴 실크 오페라 글러브의 절제된 화려함입니다.',
+    palette: [
+      { hex: '#881337', name: '올렌스카 크림슨 벨벳' },
+      { hex: '#f8fafc', name: '메이 웰랜드 퓨어 화이트' },
+      { hex: '#0f172a', name: '화이트 타이 이브닝 블랙' }
+    ],
+    tags: ['#순수의시대', '#버슬드레스', '#도금시대', '#19C빅토리아', '#연미복'],
+    aliases: ['순수의 시대', '순수의시대', 'the age of innocence', '버슬', '버슬 드레스', '도금시대', '19세기'],
+    shortVerdict: '1870년대 파리 워스 하우스의 정교한 버슬 드레스 오스카 수상작.',
+    parts: []
+  },
+
+  // 22. 영 빅토리아 (The Young Victoria, 2009)
+  {
+    id: 'young-victoria',
+    title: '영 빅토리아',
+    originalTitle: 'The Young Victoria (2009, 장 마크 발레 연출, 에밀리 블런트 주연)',
+    mediaType: '아카데미 의상상 수상 영화 (샌디 파월 의상감독)',
+    year: 2009,
+    era: '19세기 전반 (1837~1840년 빅토리아 여왕 즉위기)',
+    eraCategory: '근대·빅토리아',
+    region: '영국 런던 켄싱턴 궁전 및 버킹엄 궁전',
+    guild: '영국 왕립 호놀턴(Honiton) 레이스 직조 장인',
+    socialStatus: '빅토리아 여왕 및 앨버트 공',
+    category: '19C 초기 빅토리아 대관식 정장 & 호놀턴 레이스 웨딩드레스',
+    accuracyScore: 96,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0zXYt9eX4THmIpoc3GAKLBhBLQXCj7TLk4Ago4-ZpOaVYg1IweA57vHXk0o3dABzRJQCYFusPALPiCyLpI5o85NepHnAdiI1OtXM-O0KXB0uu3PJnw_65YQitZ4KjGsATtp2UUYheHvdE34LPjAEH5-62iCRc0JhiZqTdOhI-HogI4_RAUX1jQIoWzDqTU1xuy3M7lWsIoyGgSro5QpIdzG76HckvPl9KuMlMM3x-8hjAmW6Q-rDARA',
+    alt: 'Young Queen Victoria wearing historic white Honiton lace wedding gown and floral orange blossom wreath.',
+    organization: '영국 왕실 컬렉션 트러스트(Royal Collection Trust)',
+    judgmentSummary: '1840년 빅토리아 여왕이 서구 웨딩드레스의 표준으로 확립한 호놀턴(Honiton) 수제 레이스와 백색 실크 새틴 웨딩드레스, 1838년 대관식 금사 예복을 실물 크기로 재현하여 아카데미 의상상 수상.',
+    sources: ['켄싱턴 궁전 소장 빅토리아 여왕 웨딩드레스 실물', '왕실 대관식 회화 기록'],
+    creatorTips: '오늘날 순백색 웨딩드레스의 기원이 된 호놀턴 레이스와 오렌지 블로섬 화관의 정초한 디테일을 역사적으로 탐구할 수 있는 필독 레퍼런스입니다.',
+    palette: [
+      { hex: '#fdfbf7', name: '영국 호놀턴 레이스 화이트' },
+      { hex: '#b45309', name: '대관식 금사 자수' },
+      { hex: '#166534', name: '오렌지 블로섬 리프 그린' }
+    ],
+    tags: ['#영빅토리아', '#빅토리아여왕', '#웨딩드레스', '#호놀턴레이스', '#19C빅토리아'],
+    aliases: ['영 빅토리아', '영빅토리아', 'the young victoria', '빅토리아 여왕', '웨딩드레스', '19세기'],
+    shortVerdict: '백색 호놀턴 레이스 웨딩드레스와 대관식 예복의 역사적 복원.',
+    parts: []
+  },
+
+  // 23. 벤허 (Ben-Hur, 1959)
+  {
+    id: 'ben-hur',
+    title: '벤허',
+    originalTitle: 'Ben-Hur (1959, 윌리엄 와일러 감독, 아카데미 11개 부문 수상)',
+    mediaType: '아카데미 의상상 수상 대작 (엘리자베스 하펜든 의상감독)',
+    year: 1959,
+    era: '고대 로마 제국 (AD 1세기 로마 및 유대 총독령)',
+    eraCategory: '고대 그리스·로마',
+    region: '로마 제국 예루살렘, 로마 안티오크',
+    guild: '로마 전차 경기단 및 군단병',
+    socialStatus: '유대 귀족 유다 벤허, 로마 호민관 멧살라',
+    category: '1C 고대 로마 군단 흉갑(Lorica) & 유대 전통 키톤',
+    accuracyScore: 93,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuACSkq0ViSk5QHR4fTjyX3OZpdhK_CyA8R_8KgvVxDDWhNZsIQwMtF_Jee-m-hehcA8-rWWXaj5AykRVjYOfTzlVI0pVp3HTsnRMKNni_xaiM_iVjh_HngYs_cYsQvRQGmCDbI3ryiSriYaRlXZy2LF4Zp7wjO9njyTklSGNeFCt7pX2WeuqvmeHkRUTM_vxyV2_snS4B_ebRZtovpw9d4DQ9JsPH-6FDobYPnJH4b6oqFlCx9z9iczZQ',
+    alt: 'Ancient Roman tribune in leather muscle cuirass and red woolen cape standing before chariot arena.',
+    organization: '바티칸 박물관 및 이탈리아 고고학 연구소',
+    judgmentSummary: '로마 군단 호민관의 붉은 모직 사굼(Sagum) 망토, 단련된 가죽 흉갑, 전차 경기용 색상별 가죽 튜니카와 유대 민족의 소박한 린넨 키톤을 거대한 스케일로 고증.',
+    sources: ['트라야누스 원주 부조', '사해문서 발굴 고대 린넨 섬유 분석 사료'],
+    creatorTips: '고대 지중해 세계의 엄격한 로마 군단 정복과 중동 사막 기후에 맞춘 유대 민족의 넉넉한 튜니카 핏의 계급적 대비가 강렬한 인상을 줍니다.',
+    palette: [
+      { hex: '#991b1b', name: '로마 호민관 사굼 레드' },
+      { hex: '#78350f', name: '전차 경기용 가죽 하네스' },
+      { hex: '#f5f5f4', name: '유대 아마포 린넨' }
+    ],
+    tags: ['#벤허', '#로마제국', '#군단병', '#키톤', '#튜니카', '#고대'],
+    aliases: ['벤허', 'ben-hur', '찰톤 헤스톤', '로마', '전차경주', '키톤', '고대'],
+    shortVerdict: '고대 로마 군단 장교 흉갑과 전차 경기용 튜니카 오스카 수상작.',
+    parts: []
+  },
+
+  // 24. 왕의 춤 (Le Roi Danse, 2000)
+  {
+    id: 'le-roi-danse',
+    title: '왕의 춤',
+    originalTitle: 'Le Roi Danse (2000, 제라르 코르비오 감독, 브누아 마지멜 주연)',
+    mediaType: '바로크 궁정 예술 실화 영화 (올리비에 베리오 의상감독)',
+    year: 2000,
+    era: '17세기 후기 (1660~1680년대 프랑스 바로크)',
+    eraCategory: '바로크·로코코',
+    region: '프랑스 파리 루브르 및 베르사유 궁정',
+    guild: '프랑스 왕립 아카데미 및 궁정 테일러',
+    socialStatus: '태양왕 루이 14세, 작곡가 장 밥티스트 륄리',
+    category: '17C 프랑스 바로크 쥐스토코르(Justaucorps) & 페리위그(Periwig)',
+    accuracyScore: 95,
+    accuracyGrade: 'AUTHENTIC',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuABXuM-mvZcEnLQ2NlSYBKT27zVvbBwuenU8paHQLYQ9wRU5acRMfMT4HKPBkIk1t-_S0SGmWsrj2nCnrbsQnM2UFNyInYTokALZZqpscXNE6t5GzEDhtntuUWFAvPcclPDNuuCFJjN56S_JTqwyeoF93-9qEc5dcbRKDT1s04-xdVPX1N8n-SMJogUw5Df-kR4TSxIwaYu9flnE6ik5-Yrd7Ijj4VeH5ew0EJt2G4FxXr24V_vTtfHVQ',
+    alt: 'Sun King Louis XIV in glittering gold brocade justaucorps and voluminous powdered periwig dancing on baroque stage.',
+    organization: '프랑스 베르사유 바로크 음악 센터(CMBV)',
+    judgmentSummary: '태양왕 루이 14세의 금사 브로케이드 쥐스토코르(Justaucorps), 거대한 풀 보텀 페리위그(Periwig) 가발, 프랑스 레이스 크라바트(Cravat)를 당대 왕실 무도회 기록화와 완벽히 일치하게 재현.',
+    sources: ['베르사유 궁전 루이 14세 발레 의상 도판(1653)', '프랑스 국립도서관 판화실'],
+    creatorTips: '17세기 바로크 남성 복식의 절정인 무릎길이 쥐스토코르의 넓게 퍼지는 옷자락과 목의 화려한 레이스 크라바트, 리본 장식 힐 슈즈의 화려한 선율을 포착하는 것이 포인트입니다.',
+    palette: [
+      { hex: '#ca8a04', name: '태양왕 골드 브로케이드' },
+      { hex: '#1e3a8a', name: '왕실 플뢰르 드 리스 블루' },
+      { hex: '#f5f5f4', name: '프랑스 레이스 크라바트' }
+    ],
+    tags: ['#왕의춤', '#루이14세', '#쥐스토코르', '#바로크', '#17C바로크', '#프랑스궁정'],
+    aliases: ['왕의 춤', '왕의춤', 'le roi danse', '루이 14세', '쥐스토코르', '페리위그', '바로크', '17세기'],
+    shortVerdict: '루이 14세의 황금빛 쥐스토코르와 바로크 궁정 의례복 실물 복각.',
     parts: []
   }
 ];
@@ -649,7 +991,7 @@ export const LEXICON_KEYWORDS: LexiconWord[] = [
     id: 'lex-1',
     term: '게이블 후드',
     romanTerm: 'Gable Hood',
-    count: 12,
+    count: 14,
     definition: '영국 튜더 왕조 전반기(헨리 8세 시대)에 유행한 5각형 박공지붕 모양의 건축적인 여성 모자로 뒤에 검은 벨벳 베일이 결합됨.',
     era: '16세기',
     category: '머리 장식/후드',
@@ -659,7 +1001,7 @@ export const LEXICON_KEYWORDS: LexiconWord[] = [
     id: 'lex-2',
     term: '프렌치 후드',
     romanTerm: 'French Hood',
-    count: 10,
+    count: 12,
     definition: '앤 불린이 프랑스 궁정에서 들여온 둥근 초승달 모양의 모자로 머리카락 앞부분을 드러내어 게이블 후드보다 경쾌하고 우아한 실루엣을 연출.',
     era: '16세기',
     category: '머리 장식/후드',
@@ -669,7 +1011,7 @@ export const LEXICON_KEYWORDS: LexiconWord[] = [
     id: 'lex-3',
     term: '갬비슨',
     romanTerm: 'Gambeson',
-    count: 9,
+    count: 11,
     definition: '단단한 린넨 사이에 양모 솜을 채워 누빈 충격 흡수용 무구 안감(Arming Doublet) 또는 중하위 전열병의 독립 방호복.',
     era: '11-15세기',
     category: '갑주/방호복',
@@ -677,52 +1019,72 @@ export const LEXICON_KEYWORDS: LexiconWord[] = [
   },
   {
     id: 'lex-4',
+    term: '사슬갑옷 (하버크)',
+    romanTerm: 'Hauberk',
+    count: 10,
+    definition: '수천 개의 단철 고리를 엮어 리벳으로 결속한 중세 전기의 대표적인 방호구로 십자군 기사들이 주로 착용함.',
+    era: '11-14세기',
+    category: '갑주/방호복',
+    frequency: 94
+  },
+  {
+    id: 'lex-5',
     term: '카울 후드',
     romanTerm: 'Cowl',
-    count: 8,
+    count: 9,
     definition: '중세 가톨릭 수도사들이 머리와 어깨를 덮어 세속과의 단절과 침묵을 상징하는 깊고 헐렁한 무염색 양모 후드.',
     era: '12-14세기',
     category: '수도복/후드',
     frequency: 85
   },
   {
-    id: 'lex-5',
+    id: 'lex-6',
     term: '코르셋 / 스테이즈',
     romanTerm: 'Corset / Stays',
-    count: 7,
+    count: 8,
     definition: '고래수염이나 목제 본을 촘촘히 넣어 상체를 원추형 또는 스퀘어 실루엣으로 반듯하게 교정하는 르네상스~로코코 여성 보디스.',
     era: '16-18세기',
     category: '속옷/보디스',
     frequency: 88
   },
   {
-    id: 'lex-6',
+    id: 'lex-7',
     term: '파니에',
     romanTerm: 'Pannier',
-    count: 6,
+    count: 7,
     definition: '18세기 프랑스 로코코 궁정 드레스(로브 아 라 프랑세즈) 좌우를 과장되게 벌어지게 만드는 버들가지/고래수염 언더스커트 프레임.',
     era: '18세기',
     category: '속옷/스커트 프레임',
     frequency: 78
   },
   {
-    id: 'lex-7',
-    term: '스펜서',
-    romanTerm: 'Spencer',
-    count: 5,
-    definition: '19세기 초 섭정기(Regency) 엠파이어 드레스 위에 덧입는 허리선이 매우 짧은 테일러드 모직 외투 재킷.',
-    era: '19세기 초',
-    category: '외투/재킷',
-    frequency: 64
+    id: 'lex-8',
+    term: '프록 코트',
+    romanTerm: 'Frock Coat',
+    count: 7,
+    definition: '18세기 신사들이 착용한 무릎길이의 테일러드 모직 외투로 빽빽한 단추와 꼿꼿한 스탠딩 칼라가 특징.',
+    era: '18세기',
+    category: '외투/코트',
+    frequency: 82
   },
   {
-    id: 'lex-8',
+    id: 'lex-9',
+    term: '두정갑',
+    romanTerm: 'Dujeonggap',
+    count: 6,
+    definition: '조선 중후기 군사들이 착용한 대표적인 갑주로 가죽이나 무명 옷 안쪽에 철판을 덧대고 겉에 놋쇠 못(두정)을 박아 고정한 방호복.',
+    era: '17세기 조선',
+    category: '조선 무구/갑주',
+    frequency: 86
+  },
+  {
+    id: 'lex-10',
     term: '적의 / 곤룡포',
     romanTerm: 'Jeogui & Gonryongpo',
-    count: 4,
+    count: 5,
     definition: '조선 왕실 국혼 및 정사에 착용하는 중전의 꿩 무늬 대례복(적의)과 국왕의 붉은 집무복(곤룡포).',
     era: '18세기 조선',
     category: '조선 궁중 복식',
-    frequency: 72
+    frequency: 76
   }
 ];

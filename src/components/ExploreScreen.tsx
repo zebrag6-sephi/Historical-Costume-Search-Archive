@@ -22,7 +22,7 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
   bookmarks,
   onToggleBookmark,
   onNavigateToCompare,
-  initialQuery = '13세기 북독일 한자동맹 상인 계급 여성 복식'
+  initialQuery = ''
 }) => {
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [filterEra, setFilterEra] = useState('all');
@@ -31,7 +31,15 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
 
   // AI Structured criteria parsed dynamically from the query
   const [aiCriteria, setAiCriteria] = useState<AiParsedCriteria>(() => 
-    parseNaturalLanguageQuery(initialQuery)
+    initialQuery.trim()
+      ? parseNaturalLanguageQuery(initialQuery)
+      : {
+          era: '전체 시대 (BC ~ 19C)',
+          region: '유럽 및 동아시아 전역',
+          status: '전체 계층',
+          gender: '전체 (남녀 공용)',
+          garments: '사료 기반 고증 의복 일체'
+        }
   );
 
   // Sync initial query when user enters from Home or another tab
@@ -46,6 +54,14 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
     if (searchQuery.trim()) {
       const parsed = parseNaturalLanguageQuery(searchQuery);
       setAiCriteria(parsed);
+    } else {
+      setAiCriteria({
+        era: '전체 시대 (BC ~ 19C)',
+        region: '유럽 및 동아시아 전역',
+        status: '전체 계층',
+        gender: '전체 (남녀 공용)',
+        garments: '사료 기반 고증 의복 일체'
+      });
     }
   }, [searchQuery]);
 
@@ -65,6 +81,15 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
     filterEra
   );
 
+  const eraFilterOptions = [
+    { id: 'all', label: '전체 시대' },
+    { id: '고대', label: '고대 (BC~5C)' },
+    { id: '중세', label: '중세 (11~14C)' },
+    { id: '르네상스', label: '르네상스 (15~16C)' },
+    { id: '바로크', label: '바로크·로코코 (17~18C)' },
+    { id: '근대', label: '근대·빅토리아 (19C)' }
+  ];
+
   return (
     <div className="flex flex-col w-full pb-28">
       {/* Interactive Query Section */}
@@ -78,7 +103,7 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
           </div>
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#E8F3EB] border border-[#BCE2C7] text-[#1E6B39]">
             <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
-            <span className="text-xs font-semibold tracking-tight">AI 복식 분석 완료</span>
+            <span className="text-xs font-semibold tracking-tight">AI 복식 분석 가동 중</span>
           </div>
         </div>
 
@@ -89,7 +114,7 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="자연어로 시대, 계층, 복식 요소를 검색해보세요 (예: 14세기 기사 갑옷과 갬비슨)"
+            placeholder="자연어로 시대, 작품, 복식 요소를 검색해보세요 (예: 십자군, 배리 린든, 14세기 기사 갑옷)"
             className="w-full bg-transparent text-[#1C1917] font-medium text-sm outline-none placeholder:text-[#A8A29E] truncate font-body"
           />
           {searchQuery && (
@@ -106,7 +131,14 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
 
         {/* Quick Suggestion Pills */}
         <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
-          <span className="font-['Newsreader'] text-[11px] text-[#78716C] shrink-0 font-medium">인기 사료 질의:</span>
+          <span className="font-['Newsreader'] text-[11px] text-[#78716C] shrink-0 font-medium">실제 사료 질의:</span>
+          <button
+            onClick={() => handlePresetQuery('십자군 사슬갑옷')}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
+            type="button"
+          >
+            #십자군 사슬갑옷
+          </button>
           <button
             onClick={() => handlePresetQuery('14세기 기사 갑옷과 누비 갬비슨')}
             className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
@@ -126,14 +158,28 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
             className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
             type="button"
           >
-            #튜더 게이블 후드
+            #16C 튜더 게이블 후드
           </button>
           <button
-            onClick={() => handlePresetQuery('17세기 네덜란드 서민 린넨')}
+            onClick={() => handlePresetQuery('배리 린든 18세기 프록 코트')}
             className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
             type="button"
           >
-            #17C 네덜란드 린넨
+            #배리 린든 18C 프록 코트
+          </button>
+          <button
+            onClick={() => handlePresetQuery('조선 왕실 한복 적의 곤룡포')}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
+            type="button"
+          >
+            #조선 왕실 한복
+          </button>
+          <button
+            onClick={() => handlePresetQuery('로마 검투사 갑주 토가')}
+            className="text-[11px] px-2.5 py-1 rounded-md bg-white border border-[#DDD3C4] text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] font-sans shrink-0 transition-colors cursor-pointer"
+            type="button"
+          >
+            #로마 검투사 흉갑
           </button>
         </div>
       </section>
@@ -186,19 +232,21 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
 
       {/* Multi-Filter Selectors Tray */}
       <section className="mt-3 flex flex-col gap-2 max-w-xl mx-auto w-full">
-        <div className="flex items-center gap-2 px-4 overflow-x-auto no-scrollbar py-0.5">
-          <button
-            onClick={() => setFilterEra(filterEra === 'all' ? '중세' : filterEra === '중세' ? '르네상스' : 'all')}
-            className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full border text-xs font-semibold whitespace-nowrap shadow-2xs transition-colors cursor-pointer ${
-              filterEra !== 'all'
-                ? 'bg-[#78350F] text-amber-50 border-[#78350F]'
-                : 'bg-white border-[#D9CDBF] text-[#292524] active:bg-[#ECE4D8]'
-            }`}
-            type="button"
-          >
-            <span>시대: {filterEra === 'all' ? '전체 시대' : filterEra}</span>
-            <span className="material-symbols-outlined text-[16px]">arrow_drop_down</span>
-          </button>
+        <div className="flex items-center gap-1.5 px-4 overflow-x-auto no-scrollbar py-0.5">
+          {eraFilterOptions.map((opt) => (
+            <button
+              key={opt.id}
+              onClick={() => setFilterEra(filterEra === opt.id ? 'all' : opt.id)}
+              className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap shadow-2xs transition-colors cursor-pointer border ${
+                filterEra === opt.id
+                  ? 'bg-[#78350F] text-amber-50 border-[#78350F]'
+                  : 'bg-white border-[#D9CDBF] text-[#292524] hover:border-[#8C6212]'
+              }`}
+              type="button"
+            >
+              {opt.label}
+            </button>
+          ))}
 
           <button
             onClick={() => {
@@ -206,9 +254,9 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
               else if (filterAccuracy === 'AUTHENTIC') setFilterAccuracy('SELECTIVE');
               else setFilterAccuracy('all');
             }}
-            className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap shadow-xs transition-colors cursor-pointer ${
+            className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap shadow-xs transition-colors cursor-pointer border ${
               filterAccuracy !== 'all'
-                ? 'bg-[#8C6212] text-white border border-[#8C6212]'
+                ? 'bg-[#8C6212] text-white border-[#8C6212]'
                 : 'bg-white border-[#D9CDBF] text-[#292524]'
             }`}
             type="button"
@@ -223,7 +271,7 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
                 setFilterEra('all');
                 setFilterAccuracy('all');
               }}
-              className="text-xs text-[#8C6212] font-semibold underline px-1 cursor-pointer"
+              className="text-xs text-[#8C6212] font-semibold underline px-2 shrink-0 cursor-pointer"
               type="button"
             >
               필터 초기화
@@ -234,7 +282,7 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
         {/* Accuracy Grade Quick Legend */}
         <div className="px-4 flex items-center justify-between pt-1">
           <span className="text-[11px] font-bold text-[#78716C] tracking-wider uppercase font-['Newsreader']">
-            고증 판정 기준
+            실존 영상물 고증 판정
           </span>
           <div className="flex items-center gap-1.5">
             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] text-[10px] font-bold">
@@ -250,27 +298,67 @@ export const ExploreScreen: React.FC<ExploreScreenProps> = ({
       {/* Results Count Bar */}
       <div className="px-4 mt-3 flex items-center justify-between max-w-xl mx-auto w-full">
         <div className="flex items-baseline gap-2">
-          <h3 className="font-serif text-[17px] font-bold text-[#1C1917]">일치하는 고증 레퍼런스</h3>
+          <h3 className="font-serif text-[17px] font-bold text-[#1C1917]">
+            {searchQuery.trim() ? `‘${searchQuery}’ 일치 고증 레퍼런스` : '고증 영상 아카이브 전체 목록'}
+          </h3>
           <span className="text-[11px] font-bold text-[#8C6212] bg-[#F7EFE4] px-2 py-0.5 rounded-full border border-[#DFD1BD]">
             {searchResults.length}건
           </span>
         </div>
         <span className="text-[11px] font-semibold text-[#78716C] flex items-center gap-0.5">
-          AI 관련도 및 사료 교차검증순 <span className="text-[9px]">▼</span>
+          {searchQuery.trim() ? 'AI 관련도 및 사료 교차검증순' : '사료 신뢰도 종합 평가순'} <span className="text-[9px]">▼</span>
         </span>
       </div>
 
       {/* Empty State */}
       {searchResults.length === 0 && (
-        <div className="mx-4 mt-6 p-8 text-center bg-white rounded-2xl border border-[#D6CBB9] max-w-xl self-center w-[calc(100%-2rem)]">
-          <span className="material-symbols-outlined text-[36px] text-[#8C6212] mb-2">search_off</span>
-          <h4 className="font-serif text-base font-bold text-[#1C1917]">일치하는 복식 사료가 없습니다</h4>
-          <p className="font-body text-xs text-[#78716C] mt-1">
-            ‘{searchQuery}’에 해당하는 고증 데이터를 찾지 못했습니다. 시대(중세, 르네상스)나 복식 명칭(베일, 갑옷, 튜닉)으로 다시 검색해보세요.
+        <div className="mx-4 mt-6 p-7 text-center bg-white rounded-2xl border border-[#D6CBB9] max-w-xl self-center w-[calc(100%-2rem)] shadow-xs">
+          <span className="material-symbols-outlined text-[40px] text-[#8C6212] mb-2">search_off</span>
+          <h4 className="font-serif text-base font-bold text-[#1C1917]">일치하는 실존 고증 영상물이 없습니다</h4>
+          <p className="font-body text-xs text-[#78716C] mt-1.5 leading-relaxed">
+            ‘<strong className="text-[#1C1917]">{searchQuery}</strong>’ 키워드와 매칭되는 사료 데이터가 없습니다.<br />
+            허구의 영상물을 생성하지 않으며 철저히 검증된 실존 영상물만 제공됩니다.
           </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-1.5">
+            <button
+              onClick={() => handlePresetQuery('십자군 사슬갑옷')}
+              className="text-[11px] px-2.5 py-1 bg-[#FAF6F0] border border-[#DDD3C4] rounded-md text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] cursor-pointer"
+              type="button"
+            >
+              #십자군 사슬갑옷
+            </button>
+            <button
+              onClick={() => handlePresetQuery('배리 린든')}
+              className="text-[11px] px-2.5 py-1 bg-[#FAF6F0] border border-[#DDD3C4] rounded-md text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] cursor-pointer"
+              type="button"
+            >
+              #배리 린든
+            </button>
+            <button
+              onClick={() => handlePresetQuery('14세기 기사 갑옷과 누비 갬비슨')}
+              className="text-[11px] px-2.5 py-1 bg-[#FAF6F0] border border-[#DDD3C4] rounded-md text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] cursor-pointer"
+              type="button"
+            >
+              #14C 기사 갑옷
+            </button>
+            <button
+              onClick={() => handlePresetQuery('조선 왕실 한복')}
+              className="text-[11px] px-2.5 py-1 bg-[#FAF6F0] border border-[#DDD3C4] rounded-md text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] cursor-pointer"
+              type="button"
+            >
+              #조선 왕실 한복
+            </button>
+            <button
+              onClick={() => handlePresetQuery('18세기 로코코')}
+              className="text-[11px] px-2.5 py-1 bg-[#FAF6F0] border border-[#DDD3C4] rounded-md text-[#57534E] hover:border-[#8C6212] hover:text-[#8C6212] cursor-pointer"
+              type="button"
+            >
+              #18C 로코코
+            </button>
+          </div>
           <button
-            onClick={() => setSearchQuery('')}
-            className="mt-3 px-3 py-1.5 bg-[#8C6212] text-white text-xs font-semibold rounded-lg cursor-pointer"
+            onClick={handleClear}
+            className="mt-4 px-4 py-2 bg-[#8C6212] text-white text-xs font-semibold rounded-lg hover:bg-[#6f4b00] transition-colors cursor-pointer"
             type="button"
           >
             전체 사료 목록 보기

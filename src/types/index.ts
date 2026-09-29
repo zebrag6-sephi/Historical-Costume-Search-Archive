@@ -37,6 +37,7 @@ export interface HistoricalRecord {
   creatorTips: string;
   palette: { hex: string; name: string }[];
   tags: string[];
+  aliases?: string[];
   anachronismRate?: number;
   shortVerdict?: string;
   reviewComment?: string;
