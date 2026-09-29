@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "EB Garamond", serif;
+  --font-display: "EB Garamond", serif;
+  --font-headline: "EB Garamond", serif;
+  --font-body: "Source Serif 4", serif;
+  --font-label: "Newsreader", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-parchment: #FAF6F0;
+  --color-parchment-low: #FDFBF7;
+  --color-parchment-container: #F5EFE6;
+  --color-parchment-high: #EFE7DE;
+  --color-parchment-border: #E2D9CC;
+  --color-parchment-dark: #8C6212;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAF6F0;
+    color: #1C1917;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* Hide scrollbars for archival carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

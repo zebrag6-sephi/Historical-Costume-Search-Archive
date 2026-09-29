@@ -1,0 +1,6 @@
+{
+  "name": "VIDEO RECORD - 영상 복식 고증 비교 아카이브",
+  "description": "사료 기반 역사 영상 복식 교차 고증 및 창작자(웹툰/원화/사극)를 위한 레퍼런스 비교 분석 디지털 아카이브",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
